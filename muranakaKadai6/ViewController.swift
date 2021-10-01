@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     func presentAlert(message: String) {
         let alert = UIAlertController(title: "結果", message: message, preferredStyle: .alert)
         let challengeAlert = UIAlertAction(title: "再挑戦", style: .default) { [weak self] _ in
-            guard let self = self else {return}
+            guard let self = self else {return print("アンラップに失敗")}
             self.randomNum = Int.random(in: 1...100)
             self.numLabel.text = String(self.randomNum)
         }
